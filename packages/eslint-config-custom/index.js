@@ -1,7 +1,7 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
+  extends: ["turbo", "@react-native-community"],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
+    "@typescript-eslint/no-unused-vars": "off"
   },
 };
