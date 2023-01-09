@@ -10,9 +10,7 @@ RCT_REMAP_METHOD(multiply,
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber *result = @(a * b);
-
-    resolve(result);
+    [self multiply:a b:b resolve:resolve reject:reject];
 }
 
 // Don't compile this code when we build for the old architecture.
@@ -23,5 +21,11 @@ RCT_REMAP_METHOD(multiply,
     return std::make_shared<facebook::react::NativeExampleModuleSpecJSI>(params);
 }
 #endif
+
+- (void)multiply:(double)a b:(double)b resolve:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject {
+    NSNumber *result = @(a * b);
+
+    resolve(result);
+}
 
 @end
