@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, useEffect, useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,13 +9,9 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
+import {ExampleComponentView} from 'react-native-example-component';
+import {multiply} from 'react-native-example-module';
 
 const Section: React.FC<PropsWithChildren<{title: string}>> = ({
   children,
@@ -47,11 +43,16 @@ const Section: React.FC<PropsWithChildren<{title: string}>> = ({
 };
 
 const App = () => {
+  const [result, setResult] = useState<string | number>('loading...');
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  useEffect(() => {
+    multiply(20, 99.85).then(setResult);
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -67,20 +68,12 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Example component">
+            <ExampleComponentView style={styles.component} color="#FF0000" />
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Example module">
+            <Text style={styles.sectionDescription}>{result}</Text>
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -103,6 +96,10 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  component: {
+    width: 100,
+    height: 100,
   },
 });
 
