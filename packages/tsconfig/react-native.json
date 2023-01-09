@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "React Library",
+  "display": "React Native Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "lib": ["ES2015"],
     "module": "ESNext",
     "target": "es6"

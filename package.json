@@ -21,6 +21,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "resolutions": {
+    "@types/react": "17.0.21"
+  }
 }
