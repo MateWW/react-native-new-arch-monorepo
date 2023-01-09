@@ -5,7 +5,7 @@
  * @format
  */
 
-const path = require("path")
+const path = require('path');
 
 module.exports = {
   transformer: {
@@ -16,7 +16,5 @@ module.exports = {
       },
     }),
   },
-  watchFolders: [
-    path.resolve(__dirname, "../..")
-  ]
+  watchFolders: [path.resolve(__dirname, '../..')],
 };

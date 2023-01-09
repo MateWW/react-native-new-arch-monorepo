@@ -4,4 +4,7 @@ module.exports = {
     "react/jsx-key": "off",
     "@typescript-eslint/no-unused-vars": "off"
   },
+  parserOptions: {
+    "requireConfigFile": false,
+  }
 };
