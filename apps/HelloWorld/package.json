@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "react": "18.1.0",
-    "react-native": "0.70.6"
+    "react-native": "0.70.6",
+    "react-native-example-component": "*",
+    "react-native-example-module": "*"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@tsconfig/react-native": "^2.0.2",
@@ -28,9 +28,11 @@
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
     "react-test-renderer": "18.1.0",
+    "tsconfig": "*",
     "typescript": "^4.8.3"
   },
   "jest": {
