@@ -16,7 +16,10 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.2.2",
+    "commitlint": "^17.0.2"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -24,5 +27,10 @@
   "packageManager": "yarn@1.22.17",
   "resolutions": {
     "@types/react": "17.0.21"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
