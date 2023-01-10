@@ -53,19 +53,19 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
     "@types/react": "~17.0.21",
     "@types/react-native": "0.70.0",
     "del-cli": "^5.0.0",
+    "eslint-config-custom": "*",
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-builder-bob": "^0.20.3",
     "release-it": "^15.0.0",
+    "tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "resolutions": {
@@ -103,7 +103,6 @@
       }
     }
   },
-
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
@@ -122,5 +121,8 @@
     "name": "RNExampleComponentViewSpec",
     "type": "components",
     "jsSrcsDir": "src"
+  },
+  "dependencies": {
+    "react-native-reanimated": "^2.13.0"
   }
 }
