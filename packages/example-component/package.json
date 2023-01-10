@@ -123,7 +123,6 @@
     "jsSrcsDir": "src"
   },
   "dependencies": {
-    "@react-navigation/native": "^6.1.2",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-reanimated": "3.0.0-rc.9",
     "react-native-safe-area-context": "^4.4.1",
