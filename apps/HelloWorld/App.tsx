@@ -13,6 +13,11 @@ import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import {ExampleComponentView} from 'react-native-example-component';
 import {multiply} from 'react-native-example-module';
 
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
 const Section: React.FC<PropsWithChildren<{title: string}>> = ({
   children,
   title,
@@ -42,7 +47,7 @@ const Section: React.FC<PropsWithChildren<{title: string}>> = ({
   );
 };
 
-const App = () => {
+const HomeScreen = () => {
   const [result, setResult] = useState<string | number>('loading...');
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -80,6 +85,18 @@ const App = () => {
   );
 };
 
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
 const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
@@ -102,5 +119,3 @@ const styles = StyleSheet.create({
     height: 100,
   },
 });
-
-export default App;
