@@ -29,6 +29,13 @@ buildscript {
 }
 
 allprojects {
+    project.pluginManager.withPlugin("com.facebook.react") {
+        react {
+            reactNativeDir = rootProject.file("../../../node_modules/react-native/")
+            codegenDir = rootProject.file("../../../node_modules/react-native-codegen/")
+        }
+    }
+
     repositories {
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm

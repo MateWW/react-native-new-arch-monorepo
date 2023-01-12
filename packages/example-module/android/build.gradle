@@ -91,7 +91,5 @@ if (isNewArchitectureEnabled()) {
     jsRootDir = file("../src/")
     libraryName = "ExampleModule"
     codegenJavaPackageName = "com.examplemodule"
-    codegenDir = file("../../../node_modules/react-native-codegen")
-    reactNativeDir = file("../../../node_modules/react-native")
   }
 }

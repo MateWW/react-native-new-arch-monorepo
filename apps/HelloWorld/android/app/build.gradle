@@ -83,12 +83,12 @@ project.ext.react = [
     cliPath: "../../../../node_modules/react-native/cli.js"
 ]
 
-apply(plugin: "com.facebook.react")
-
-react {
-    codegenDir = file("../../../../node_modules/react-native-codegen")
-    reactNativeDir = file("../../../../node_modules/react-native")
-}
+//apply(plugin: "com.facebook.react")
+//
+//react {
+//    codegenDir = file("../../../../node_modules/react-native-codegen")
+//    reactNativeDir = file("../../../../node_modules/react-native")
+//}
 
 apply from: "../../../../node_modules/react-native/react.gradle"
 
