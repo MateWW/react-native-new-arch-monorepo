@@ -11,7 +11,11 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "android": "turbo run android",
+    "android:release": "turbo run android -- --variant=release",
+    "ios": "turbo run ios",
+    "ios:release": "turbo run ios -- --configuration=Release"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
