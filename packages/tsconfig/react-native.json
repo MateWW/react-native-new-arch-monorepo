@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "React Native Library",
-  "extends": "./base.json",
+  "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["ES2015"],
