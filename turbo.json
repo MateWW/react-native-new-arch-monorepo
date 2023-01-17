@@ -13,10 +13,10 @@
     "dev": {
       "cache": false
     },
-    "HelloWorld#ios": {
+    "WorldHello#ios": {
       "cache": false
     },
-    "HelloWorld#android": {
+    "WorldHello#android": {
       "cache": false
     }
   }
