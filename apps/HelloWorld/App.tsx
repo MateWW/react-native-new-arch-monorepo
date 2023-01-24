@@ -1,84 +1,23 @@
-import React, {PropsWithChildren, useEffect, useState} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React from 'react';
+import type {PropsWithChildren} from 'react';
+import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 
-import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
-import {ExampleComponentView} from 'react-native-example-component';
-import {multiply} from 'react-native-example-module';
-
-const Section: React.FC<PropsWithChildren<{title: string}>> = ({
-  children,
-  title,
-}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App = () => {
-  const [result, setResult] = useState<string | number>('loading...');
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  useEffect(() => {
-    multiply(20, 99.85).then(setResult);
-  }, []);
+function App(): JSX.Element {
+  const isDarkMode = true;
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={{flex: 1}}>
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            backgroundColor: 'white',
           }}>
-          <Section title="Example component">
-            <ExampleComponentView style={styles.component} color="#FF0000" />
-          </Section>
-          <Section title="Example module">
-            <Text style={styles.sectionDescription}>{result}</Text>
-          </Section>
+          <Text style={styles.highlight}>App.tsx</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   sectionContainer: {
@@ -96,10 +35,6 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
-  },
-  component: {
-    width: 100,
-    height: 100,
   },
 });
 
