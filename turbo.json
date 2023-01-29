@@ -10,9 +10,7 @@
     "typecheck": {
       "outputs": []
     },
-    "dev": {
-      "cache": false
-    },
+    "WorldHello#start": {},
     "WorldHello#ios": {
       "cache": false
     },

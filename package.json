@@ -7,15 +7,15 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "turbo run start",
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "android": "concurrently \"turbo run android -- --no-packager\"  \"yarn start\" ",
+    "android:release": "turbo run android -- --no-packager --mode=release",
+    "ios": "concurrently \"turbo run ios -- --no-packager\"  \"yarn start\"",
+    "ios:release": "turbo run ios -- --no-packager --configuration=Release",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "android": "turbo run android",
-    "android:release": "turbo run android -- --mode=release",
-    "ios": "turbo run ios",
-    "ios:release": "turbo run ios -- --configuration=Release"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "eslint-config-custom": "*",
@@ -23,7 +23,8 @@
     "turbo": "latest",
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
-    "commitlint": "^17.0.2"
+    "commitlint": "^17.0.2",
+    "concurrently": "^7.6.0"
   },
   "engines": {
     "node": ">=14.0.0"
